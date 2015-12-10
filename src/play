@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from argparse import ArgumentParser
+from game import Game, World
+import sys
+import tkinter as tk
+
+def main(argv):
+	parser = ArgumentParser()
+	args = parser.parse_args(argv[1:])
+
+	world = World(100, 100, seed=100)
+
+	root = tk.Tk()
+	game = Game(root, world)
+	root.mainloop()
+
+	return 0
+
+if __name__ == "__main__":
+	sys.exit(main(sys.argv))
